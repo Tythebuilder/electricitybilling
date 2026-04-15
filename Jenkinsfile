@@ -2,14 +2,14 @@
     agent any
 
     environment {
-        DOCKER_IMAGE = "sabarishselva23/YOUR-PROJECT-NAME:latest" // CHANGE: all lowercase e.g. sabarishselva23/shoppingcart:latest
+        DOCKER_IMAGE = "sabarishselva23/electricitybilling:latest" // CHANGE: all lowercase e.g. sabarishselva23/shoppingcart:latest
     }
 
     stages {
         stage("Clone Repository") {
             steps {
                 git branch: "main",
-                    url: "https://github.com/Tythebuilder/YOUR-PROJECT-NAME.git" // CHANGE: your GitHub repo name e.g. shoppingcart
+                    url: "https://github.com/Tythebuilder/electricitybilling.git" // CHANGE: your GitHub repo name e.g. shoppingcart
             }
         }
 
@@ -40,7 +40,7 @@
         stage("Deploy to Kubernetes") {
             steps {
                 bat "kubectl apply -f deployment.yaml"
-                bat "kubectl rollout restart deployment/YOUR-PROJECT-NAME" // CHANGE: all lowercase e.g. shoppingcart
+                bat "kubectl rollout restart deployment/electricitybilling" // CHANGE: all lowercase e.g. shoppingcart
             }
         }
     }

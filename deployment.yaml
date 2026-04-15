@@ -1,30 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: YOUR-PROJECT-NAME        # CHANGE: all lowercase e.g. shoppingcart
+  name: electricitybilling        # CHANGE: all lowercase e.g. shoppingcart
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: YOUR-PROJECT-NAME     # CHANGE: all lowercase e.g. shoppingcart
+      app: electricitybilling     # CHANGE: all lowercase e.g. shoppingcart
   template:
     metadata:
       labels:
-        app: YOUR-PROJECT-NAME   # CHANGE: all lowercase e.g. shoppingcart
+        app: electricitybilling   # CHANGE: all lowercase e.g. shoppingcart
     spec:
       containers:
-      - name: YOUR-PROJECT-NAME  # CHANGE: all lowercase e.g. shoppingcart
-        image: sabarishselva23/YOUR-PROJECT-NAME:latest  # CHANGE: all lowercase e.g. sabarishselva23/shoppingcart:latest
+      - name: electricitybilling  # CHANGE: all lowercase e.g. shoppingcart
+        image: sabarishselva23/electricitybilling:latest  # CHANGE: all lowercase e.g. sabarishselva23/shoppingcart:latest
         imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: YOUR-PROJECT-NAME-service  # CHANGE: all lowercase e.g. shoppingcart-service
+  name: electricitybilling  # CHANGE: all lowercase e.g. shoppingcart-service
 spec:
   type: NodePort
   selector:
-    app: YOUR-PROJECT-NAME         # CHANGE: all lowercase e.g. shoppingcart
+    app: electricitybilling         # CHANGE: all lowercase e.g. shoppingcart
   ports:
     - protocol: TCP
       port: 8080
