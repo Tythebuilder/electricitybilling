@@ -34,4 +34,4 @@ spec:
       # 2nd project (shoppingcart)        → 30009
       # 3rd project                       → 30010
       # 4th project                       → 30011
-      nodePort: 30008
+      nodePort: 30013
